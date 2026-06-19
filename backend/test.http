@@ -1,0 +1,154 @@
+### Register Admin
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Admin23",
+  "email": "admin23@gmail.com",
+  "password": "123456",
+  "userType": "ADMIN"
+}
+
+### Login Admin
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "admin23@gmail.com",
+  "password": "123456"
+}
+
+### Register User
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Khushal",
+  "email": "user@gmail.com",
+  "password": "123456",
+  "mobile": "9999999999",
+  "address": "Hyderabad",
+  "pincode": "500001"
+}
+
+### Login User
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "123456"
+}
+
+### Create Product - Admin Only
+POST http://localhost:5000/api/admin/products
+Authorization: Bearer PASTE_ADMIN_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "title": "Nike Running Shoes",
+  "description": "Comfortable running shoes for daily use",
+  "mainImg": "https://example.com/shoe.jpg",
+  "carousel": [
+    "https://example.com/shoe1.jpg",
+    "https://example.com/shoe2.jpg"
+  ],
+  "category": "Shoes",
+  "sizes": ["7", "8", "9", "10"],
+  "gender": "MEN",
+  "price": 2999,
+  "discount": 10,
+  "stock": 50
+}
+
+### Get All Products
+GET http://localhost:5000/api/products
+
+### Get Product By ID
+GET http://localhost:5000/api/products/PASTE_PRODUCT_ID_HERE
+
+### Add Product To Cart
+POST http://localhost:5000/api/cart/add
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "productId": "PASTE_PRODUCT_ID_HERE",
+  "quantity": 2,
+  "size": "9"
+}
+
+### Get My Cart
+GET http://localhost:5000/api/cart
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+
+### Update Cart Quantity
+PUT http://localhost:5000/api/cart/PASTE_CART_ITEM_ID_HERE
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "quantity": 3
+}
+
+### Place Order
+POST http://localhost:5000/api/orders
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "name": "Khushal",
+  "mobile": "9999999999",
+  "email": "user@gmail.com",
+  "address": "Hyderabad",
+  "pincode": "500001",
+  "paymentMethod": "COD"
+}
+
+### My Orders
+GET http://localhost:5000/api/orders/my-orders
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+
+### Get Single Order
+GET http://localhost:5000/api/orders/PASTE_ORDER_ID_HERE
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+
+### Cancel Order
+PUT http://localhost:5000/api/orders/PASTE_ORDER_ID_HERE/cancel
+Authorization: Bearer PASTE_USER_TOKEN_HERE
+
+### Admin Get All Orders
+GET http://localhost:5000/api/admin/orders
+Authorization: Bearer PASTE_ADMIN_TOKEN_HERE
+
+### Admin Update Order Status
+PUT http://localhost:5000/api/admin/orders/PASTE_ORDER_ID_HERE/status
+Authorization: Bearer PASTE_ADMIN_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "status": "SHIPPED"
+}
+
+### Admin Add Banner
+POST http://localhost:5000/api/admin/banners
+Authorization: Bearer PASTE_ADMIN_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "title": "Big Sale",
+  "image": "https://example.com/banner.jpg"
+}
+
+### Admin Add Category
+POST http://localhost:5000/api/admin/categories
+Authorization: Bearer PASTE_ADMIN_TOKEN_HERE
+Content-Type: application/json
+
+{
+  "title": "Shoes",
+  "image": "https://example.com/category-shoes.jpg"
+}
+
+### Get Home Data
+GET http://localhost:5000/api/admin/home-data
