@@ -142,3 +142,20 @@ export const getHomeData = async (req, res) => {
     categories: adminData?.categories || []
   });
 };
+
+
+export const createManyProducts = async (req, res) => {
+  const { products } = req.body;
+
+  if (!products || !Array.isArray(products) || products.length === 0) {
+    return res.status(400).json({ message: "Products array is required" });
+  }
+
+  const createdProducts = await Product.insertMany(products);
+
+  res.status(201).json({
+    message: "Products added successfully",
+    count: createdProducts.length,
+    products: createdProducts
+  });
+};

@@ -2,7 +2,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const navigate = useNavigate();
-
   const user = JSON.parse(localStorage.getItem("user"));
 
   const logout = () => {
@@ -18,26 +17,30 @@ function Navbar() {
       </Link>
 
       <div className="ms-auto d-flex gap-3 align-items-center">
-        <Link className="nav-link text-white" to="/">
-          Products
-        </Link>
-
         {user && (
           <>
-            <Link className="nav-link text-white" to="/cart">
-              Cart
+            <Link className="nav-link text-white" to="/">
+              Products
             </Link>
 
-            <Link className="nav-link text-white" to="/orders">
-              Orders
-            </Link>
+            {user.userType === "USER" && (
+              <>
+                <Link className="nav-link text-white" to="/cart">
+                  Cart
+                </Link>
+
+                <Link className="nav-link text-white" to="/orders">
+                  Orders
+                </Link>
+              </>
+            )}
+
+            {user.userType === "ADMIN" && (
+              <Link className="nav-link text-warning" to="/admin">
+                Admin
+              </Link>
+            )}
           </>
-        )}
-
-        {user?.userType === "ADMIN" && (
-          <Link className="nav-link text-warning" to="/admin">
-            Admin
-          </Link>
         )}
 
         {!user ? (

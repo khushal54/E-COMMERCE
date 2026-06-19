@@ -9,7 +9,8 @@ import {
   updateOrderStatus,
   addBanner,
   addCategory,
-  getHomeData
+  getHomeData,
+  createManyProducts
 } from "../controllers/adminController.js";
 
 import { protect, adminOnly } from "../middleware/authMiddleware.js";
@@ -29,5 +30,6 @@ router.put("/orders/:id/status", protect, adminOnly, updateOrderStatus);
 
 router.post("/banners", protect, adminOnly, addBanner);
 router.post("/categories", protect, adminOnly, addCategory);
+router.post("/products/bulk", protect, adminOnly, createManyProducts);
 
 export default router;

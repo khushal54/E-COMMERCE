@@ -3,8 +3,8 @@ POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
 {
-  "username": "Admin23",
-  "email": "admin23@gmail.com",
+  "username": "Admin4",
+  "email": "admin4@gmail.com",
   "password": "123456",
   "userType": "ADMIN"
 }
@@ -14,7 +14,7 @@ POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "email": "admin23@gmail.com",
+  "email": "admin4@gmail.com",
   "password": "123456"
 }
 
@@ -152,3 +152,222 @@ Content-Type: application/json
 
 ### Get Home Data
 GET http://localhost:5000/api/admin/home-data
+
+
+### Add Many Products
+POST http://localhost:5000/api/admin/products/bulk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzU4ZDRkYzViNTliZmJiYWU5ZWQ3MSIsImlhdCI6MTc4MTg5NDUxMCwiZXhwIjoxNzgyNDk5MzEwfQ.Y2Pq22Rt9BrKFQ3TMEEJE-gdA2sL_drRaE2x2gp-DwA
+Content-Type: application/json
+
+{
+  "products": [
+    {
+      "title": "Nike Shoes",
+      "description": "Comfortable sports shoes",
+      "mainImg": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+      "category": "Shoes",
+      "sizes": ["7", "8", "9", "10"],
+      "gender": "MEN",
+      "price": 2999,
+      "discount": 10,
+      "stock": 50
+    },
+    {
+      "title": "Smart Watch",
+      "description": "Fitness tracking smart watch",
+      "mainImg": "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+      "category": "Electronics",
+      "sizes": ["Free Size"],
+      "gender": "UNISEX",
+      "price": 1999,
+      "discount": 15,
+      "stock": 30
+    },
+    {
+      "title": "Backpack",
+      "description": "Stylish college backpack",
+      "mainImg": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
+      "category": "Bags",
+      "sizes": ["Medium", "Large"],
+      "gender": "UNISEX",
+      "price": 1299,
+      "discount": 20,
+      "stock": 40
+    }
+  ]
+}
+
+### Bulk Add 15 Products
+POST http://localhost:5000/api/admin/products/bulk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhMzU4ZDRkYzViNTliZmJiYWU5ZWQ3MSIsImlhdCI6MTc4MTg5NDUxMCwiZXhwIjoxNzgyNDk5MzEwfQ.Y2Pq22Rt9BrKFQ3TMEEJE-gdA2sL_drRaE2x2gp-DwA
+Content-Type: application/json
+
+{
+  "products": [
+    {
+      "title": "Nike Air Max",
+      "description": "Premium running shoes",
+      "mainImg": "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
+      "category": "Shoes",
+      "sizes": ["7","8","9","10"],
+      "gender": "MEN",
+      "price": 4999,
+      "discount": 15,
+      "stock": 100
+    },
+    {
+      "title": "Adidas Ultraboost",
+      "description": "Comfortable sports shoes",
+      "mainImg": "https://images.unsplash.com/photo-1600185365483-26d7a4cc7519",
+      "category": "Shoes",
+      "sizes": ["7","8","9","10"],
+      "gender": "MEN",
+      "price": 5999,
+      "discount": 10,
+      "stock": 50
+    },
+    {
+      "title": "Apple Watch Series",
+      "description": "Smart fitness watch",
+      "mainImg": "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+      "category": "Watches",
+      "sizes": ["Free Size"],
+      "gender": "UNISEX",
+      "price": 29999,
+      "discount": 5,
+      "stock": 30
+    },
+    {
+      "title": "Samsung Galaxy Watch",
+      "description": "Advanced smartwatch",
+      "mainImg": "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56",
+      "category": "Watches",
+      "sizes": ["Free Size"],
+      "gender": "UNISEX",
+      "price": 19999,
+      "discount": 8,
+      "stock": 25
+    },
+    {
+      "title": "MacBook Pro",
+      "description": "Apple laptop for professionals",
+      "mainImg": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+      "category": "Laptops",
+      "sizes": ["16GB RAM"],
+      "gender": "UNISEX",
+      "price": 149999,
+      "discount": 5,
+      "stock": 20
+    },
+    {
+      "title": "Dell XPS 15",
+      "description": "Powerful Windows laptop",
+      "mainImg": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "category": "Laptops",
+      "sizes": ["16GB RAM"],
+      "gender": "UNISEX",
+      "price": 119999,
+      "discount": 12,
+      "stock": 15
+    },
+    {
+      "title": "Sony WH1000XM5",
+      "description": "Noise cancelling headphones",
+      "mainImg": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+      "category": "Headphones",
+      "sizes": ["Free Size"],
+      "gender": "UNISEX",
+      "price": 24999,
+      "discount": 10,
+      "stock": 40
+    },
+    {
+      "title": "JBL Tune 760",
+      "description": "Wireless headphones",
+      "mainImg": "https://images.unsplash.com/photo-1484704849700-f032a568e944",
+      "category": "Headphones",
+      "sizes": ["Free Size"],
+      "gender": "UNISEX",
+      "price": 4999,
+      "discount": 20,
+      "stock": 60
+    },
+    {
+      "title": "iPhone 15",
+      "description": "Latest Apple smartphone",
+      "mainImg": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "category": "Mobiles",
+      "sizes": ["128GB"],
+      "gender": "UNISEX",
+      "price": 79999,
+      "discount": 5,
+      "stock": 35
+    },
+    {
+      "title": "Samsung S24",
+      "description": "Flagship Android smartphone",
+      "mainImg": "https://images.unsplash.com/photo-1598327105666-5b89351aff97",
+      "category": "Mobiles",
+      "sizes": ["256GB"],
+      "gender": "UNISEX",
+      "price": 69999,
+      "discount": 8,
+      "stock": 30
+    },
+    {
+      "title": "Wildcraft Backpack",
+      "description": "College backpack",
+      "mainImg": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62",
+      "category": "Bags",
+      "sizes": ["Medium"],
+      "gender": "UNISEX",
+      "price": 1999,
+      "discount": 15,
+      "stock": 100
+    },
+    {
+      "title": "Skybags Backpack",
+      "description": "Travel backpack",
+      "mainImg": "https://images.unsplash.com/photo-1581605405669-fcdf81165afa",
+      "category": "Bags",
+      "sizes": ["Large"],
+      "gender": "UNISEX",
+      "price": 2499,
+      "discount": 18,
+      "stock": 80
+    },
+    {
+      "title": "Puma T-Shirt",
+      "description": "Comfortable cotton t-shirt",
+      "mainImg": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab",
+      "category": "Clothing",
+      "sizes": ["S","M","L","XL"],
+      "gender": "MEN",
+      "price": 999,
+      "discount": 25,
+      "stock": 200
+    },
+    {
+      "title": "Levis T-Shirt",
+      "description": "Premium casual wear",
+      "mainImg": "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb",
+      "category": "Clothing",
+      "sizes": ["S","M","L","XL"],
+      "gender": "MEN",
+      "price": 1499,
+      "discount": 20,
+      "stock": 150
+    },
+    {
+      "title": "Zara Hoodie",
+      "description": "Winter wear hoodie",
+      "mainImg": "https://images.unsplash.com/photo-1576566588028-4147f3842f27",
+      "category": "Clothing",
+      "sizes": ["M","L","XL"],
+      "gender": "UNISEX",
+      "price": 2499,
+      "discount": 15,
+      "stock": 120
+    }
+  ]
+}
